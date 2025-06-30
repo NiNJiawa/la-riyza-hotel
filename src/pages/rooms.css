@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Katibeh&family=Kantumruy+Pro&family=Playfair+Display:wght@700&display=swap");
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 400px;
+  background-image: url("/public/hero-room.png"); /* ganti sesuai file kamu */
+  background-size: cover;
+  background-position: center;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.699);
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.hero-text {
+  color: #fff;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: #c5973b;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #f8f8f8;
+}
+
+/* ROOMS SECTION */
+.rooms-section {
+  font-family: "Kantumruy Pro", sans-serif;
+  padding: 60px;
+  background-color: #fff;
+}
+
+.rooms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ROOM CARD */
+.room-card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.room-card.unavailable {
+  opacity: 0.5;
+  background-color: #eee;
+}
+
+.room-image {
+  width: 50%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* ROOM INFO */
+.room-info {
+  flex: 1;
+  padding: 30px 40px;
+  background-color: #f9f9f9;
+}
+
+.room-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #1c1c1c;
+}
+
+.room-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.room-info li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* BUTTONS */
+.room-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-details,
+.btn-book {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-details {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.btn-details:hover {
+  background-color: #004093;
+}
+
+.btn-book {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.btn-book:hover {
+  background-color: #004093;
+}
+
+.room-card.unavailable {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
+
+.unavailable-label {
+  display: inline-block;
+  background: #ef4444;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}

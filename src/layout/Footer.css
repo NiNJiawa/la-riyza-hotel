@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Katibeh&family=Kantumruy+Pro&family=Playfair+Display:wght@700&display=swap");
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 60px;
+  font-family: "Kantumruy Pro", sans-serif;
+  border: 1px solid #ccc;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 80px;
+}
+
+.footer-left {
+  max-width: 40%;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: #c8171d;
+  margin: 0 0 4px;
+}
+
+.hotel {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: #0c0909;
+  margin: 4px 0 24px;
+  letter-spacing: 8px;
+}
+
+.description {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 0 4px;
+  line-height: 1.6;
+}
+
+.footer-right {
+  max-width: 50%;
+  text-align: left;
+}
+
+.connect-title,
+.contact-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #202020;
+  margin-bottom: 16px;
+}
+
+.icons {
+  font-size: 26px;
+  color: #a47c00;
+  letter-spacing: 24px;
+  margin-bottom: 32px;
+}
+
+.contact-block p {
+  font-size: 18px;
+  color: #202020;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-block p svg {
+  margin-right: 10px;
+  color: #a47c00;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #202020;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
