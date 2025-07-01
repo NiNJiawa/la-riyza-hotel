@@ -15,13 +15,35 @@ body {
 .hero-booking-full {
   width: 100%;
   background-color: #1e2c40;
-  color: gold;
+  color: #aa913d;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 40px 20px;
   text-align: center;
+}
+
+.booking-title {
+  background-color: #1f2a44;
+  text-align: center;
+  color: #ffffffa2;
+  font-family: "Katibeh", serif;
+}
+
+.booking-title h2 {
+  font-size: 70px;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: #aa913d;
+}
+
+.booking-title p {
+  font-size: 20px;
+  letter-spacing: 10px;
+  font-weight: 100;
+  color: #ffffffa2;
+  font-family: "Kantumruy Pro", sans-serif;
 }
 
 .hero-content p {
@@ -230,4 +252,262 @@ textarea {
 
 .popup-button.secondary:hover {
   background-color: #888;
+}
+
+/* ========== TABLET (≤ 768px) ========== */
+@media (max-width: 768px) {
+  .booking-title h2 {
+    font-size: 50px;
+  }
+
+  .booking-title p {
+    font-size: 16px;
+    letter-spacing: 6px;
+  }
+
+  .checkin-row {
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .checkin-item {
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .date-input {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .booking-container {
+    padding: 0 16px 60px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .card-booking {
+    padding: 20px;
+  }
+
+  .payment-logos img {
+    height: 26px;
+    margin: 8px 8px 0 0;
+  }
+
+  .booking-details .detail-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .room-price,
+  .total-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  .confirm-booking-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .booking-popup-content {
+    padding: 24px;
+  }
+}
+
+/* ========== HP KECIL (≤ 486px) ========== */
+@media (max-width: 486px) {
+  .booking-title h2 {
+    font-size: 36px;
+  }
+
+  .booking-title p {
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .checkin-row {
+    gap: 16px;
+  }
+
+  .date-input {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .card-booking h2 {
+    font-size: 18px;
+  }
+
+  input,
+  textarea {
+    font-size: 13px;
+  }
+
+  .info-box {
+    font-size: 13px;
+  }
+
+  .payment-subtitle {
+    font-size: 13px;
+  }
+
+  .booking-details .detail-row {
+    font-size: 13px;
+  }
+
+  .room-price,
+  .total-price {
+    font-size: 14px;
+  }
+
+  .popup-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .booking-popup-content p {
+    font-size: 14px;
+  }
+}
+
+/* widget */
+.fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fab-button {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.fab-button:active {
+  transform: scale(0.95);
+}
+
+.fab-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fab-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.fab-options.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fab-icon {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.fab-icon:hover {
+  transform: scale(1.2);
+}
+
+.fab-icon img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .fab-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .fab-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .fab-icon img {
+    width: 70%;
+    height: 70%;
+  }
+
+  .fab-options {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 468px) {
+  .fab-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .fab-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fab-icon img {
+    width: 65%;
+    height: 65%;
+  }
+
+  .fab-options {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+.copy-btn {
+  padding: 4px 10px;
+  font-size: 13px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #0056b3;
 }

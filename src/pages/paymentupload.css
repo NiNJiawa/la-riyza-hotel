@@ -1,0 +1,239 @@
+/* Payment Upload Layout */
+.payment-container {
+  min-height: 100vh;
+  background-color: #f6f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.payment-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+}
+
+.payment-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.payment-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.payment-code {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+/* Upload Button */
+.upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f1f5f9;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+  background-color: #e2e8f0;
+}
+
+.upload-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #1e40af;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.upload-message {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.upload-message.success {
+  color: #16a34a;
+}
+
+.upload-message.error {
+  color: #dc2626;
+}
+
+/* Floating Action Button (FAB) */
+.fab-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fab-button {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.fab-button:active {
+  transform: scale(0.95);
+}
+
+.fab-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fab-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.fab-options.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fab-icon {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.fab-icon:hover {
+  transform: scale(1.2);
+}
+
+.fab-icon img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payment-card {
+    padding: 30px 24px;
+  }
+
+  .payment-title {
+    font-size: 22px;
+  }
+
+  .payment-code {
+    font-size: 15px;
+  }
+
+  .upload-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .fab-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .fab-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .fab-icon img {
+    width: 70%;
+    height: 70%;
+  }
+
+  .fab-options {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 468px) {
+  .payment-title {
+    font-size: 20px;
+  }
+
+  .payment-card {
+    padding: 24px 20px;
+  }
+
+  .fab-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .fab-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fab-icon img {
+    width: 65%;
+    height: 65%;
+  }
+
+  .fab-options {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+}
+.manual-code-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #f9fafb;
+  color: #1e293b;
+}

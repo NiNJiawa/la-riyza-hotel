@@ -24,6 +24,11 @@ export default function RoomDetails() {
   if (loading) return <p>Loading room...</p>;
   if (!room) return <p>Room not found.</p>;
 
+  function toggleFab() {
+    const el = document.getElementById("fabOptions");
+    el.classList.toggle("active");
+  }
+
   return (
     <div className="room-details-container">
       <img
@@ -79,6 +84,38 @@ export default function RoomDetails() {
         >
           Book Now
         </button>
+      </div>
+      <div className="fab-container">
+        <div className="fab-options" id="fabOptions">
+          <a
+            href="https://www.traveloka.com/id-id/hotel/indonesia/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/traveloka.jpeg" alt="Traveloka" />
+          </a>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/wa.jpeg" alt="WhatsApp" />
+          </a>
+          <a
+            href="https://www.instagram.com/your_ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/ig.jpeg" alt="Instagram" />
+          </a>
+        </div>
+
+        <div className="fab-button" onClick={toggleFab}>
+          <img src="/public/images/menu-logo.jpeg" alt="Menu" />
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "../axios";
 import Sidebar from "../layout/Sidebar";
+import "./adminpayments.css";
 
 export default function AdminPayments() {
   const [payments, setPayments] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     fetchPayments();
@@ -23,80 +25,63 @@ export default function AdminPayments() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        fontFamily: "Inter, sans-serif",
-        backgroundColor: "#f8fafc",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="admin-page">
       <Sidebar />
-      <div style={{ flex: 1, padding: "3rem" }}>
-        <h1
-          style={{
-            fontSize: "24px",
-            fontWeight: "600",
-            marginBottom: "2rem",
-            color: "#1e293b",
-          }}
-        >
-          💳 Payment Proofs
-        </h1>
+      <div className="admin-main">
+        <h1 className="page-title">💳 Payment Proofs</h1>
 
         {payments.length === 0 ? (
-          <p style={{ color: "#64748b" }}>No payment proofs submitted yet.</p>
+          <p className="no-payments">No payment proofs submitted yet.</p>
         ) : (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "1.5rem",
-            }}
-          >
+          <div className="payments-grid">
             {payments.map((p) => (
-              <div
-                key={p.id}
-                style={{
-                  background: "#fff",
-                  borderRadius: "12px",
-                  padding: "1rem",
-                  boxShadow: "0 4px 15px rgba(0,0,0,0.05)",
-                }}
-              >
-                <h3
-                  style={{
-                    marginBottom: "0.5rem",
-                    fontSize: "16px",
-                    color: "#1e293b",
-                  }}
-                >
-                  Booking Code:{" "}
-                  <span style={{ fontWeight: "600" }}>{p.booking_code}</span>
+              <div className="payment-card" key={p.id}>
+                <h3 className="payment-title">
+                  Booking Code: <span className="bold">{p.booking_code}</span>
                 </h3>
-                <div>
+                <div className="payment-image-wrapper">
                   <img
                     src={`http://localhost:8000/${p.payment_proof}`}
                     alt="Payment Proof"
-                    style={{
-                      width: "100%",
-                      borderRadius: "10px",
-                      maxHeight: "250px",
-                      objectFit: "cover",
-                    }}
+                    className="payment-image"
+                    onClick={() =>
+                      setSelectedImage(
+                        `http://localhost:8000/${p.payment_proof}`
+                      )
+                    }
+                    style={{ cursor: "pointer" }}
                   />
                 </div>
-                <p
-                  style={{
-                    fontSize: "12px",
-                    marginTop: "0.5rem",
-                    color: "#64748b",
-                  }}
-                >
+                <p className="uploaded-date">
                   Uploaded: {new Date(p.created_at).toLocaleString()}
                 </p>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Modal Preview */}
+        {selectedImage && (
+          <div
+            className="modal-backdrop"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div
+              className="modal-image-container"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="close-btn"
+                onClick={() => setSelectedImage(null)}
+              >
+                ✕
+              </button>
+              <img
+                src={selectedImage}
+                alt="Full Preview"
+                className="modal-image"
+              />
+            </div>
           </div>
         )}
       </div>

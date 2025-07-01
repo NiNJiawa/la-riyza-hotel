@@ -1,0 +1,163 @@
+/* ===== Layout Dasar ===== */
+.admin-page {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* ===== Konten Utama ===== */
+.admin-main {
+  flex: 1;
+  padding: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ===== Judul Halaman ===== */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+/* ===== Jika Data Kosong ===== */
+.no-payments {
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+/* ===== Grid Kartu Pembayaran ===== */
+.payments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== Kartu Individual ===== */
+.payment-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Judul Kartu ===== */
+.payment-title {
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  color: #1e293b;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+/* ===== Gambar Bukti Pembayaran ===== */
+.payment-image-wrapper {
+  margin-top: 0.5rem;
+}
+
+.payment-image {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #e2e8f0;
+}
+
+/* ===== Tanggal Upload ===== */
+.uploaded-date {
+  font-size: 12px;
+  margin-top: 0.5rem;
+  color: #64748b;
+}
+
+/* ===== Modal Pop-up Preview (Fix Layout) ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+  overflow: auto;
+}
+
+.modal-image-container {
+  position: relative;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Tombol ✕ yang tidak kepotong dan stay di pojok */
+.close-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #dc2626;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Responsive Fix ===== */
+@media (max-width: 768px) {
+  .admin-main {
+    padding: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .payment-title {
+    font-size: 15px;
+  }
+
+  .payment-image {
+    max-height: 200px;
+  }
+}

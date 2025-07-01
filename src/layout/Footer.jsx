@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           <div className="contact-block">
-            <h3 className="contact-title">CONTACTS</h3>
+            <h2 className="contact-footer">CONTACTS</h2>
             <p>
               <FaPhoneAlt /> <span>+62 786 8379 9333</span>
             </p>

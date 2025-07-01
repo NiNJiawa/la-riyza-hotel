@@ -14,7 +14,6 @@ export default function Rooms() {
       .then((res) => {
         const allRooms = res.data.data;
 
-        // Urutkan: available dulu, lalu unavailable
         const sortedRooms = [...allRooms].sort((a, b) => {
           if (
             a.availability === "available" &&
@@ -39,6 +38,10 @@ export default function Rooms() {
   }, []);
 
   if (loading) return <p>Loading rooms...</p>;
+  function toggleFab() {
+    const el = document.getElementById("fabOptions");
+    el.classList.toggle("active");
+  }
 
   return (
     <>
@@ -102,6 +105,38 @@ export default function Rooms() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="fab-container">
+        <div className="fab-options" id="fabOptions">
+          <a
+            href="https://www.traveloka.com/id-id/hotel/indonesia/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/traveloka.jpeg" alt="Traveloka" />
+          </a>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/wa.jpeg" alt="WhatsApp" />
+          </a>
+          <a
+            href="https://www.instagram.com/your_ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/ig.jpeg" alt="Instagram" />
+          </a>
+        </div>
+
+        <div className="fab-button" onClick={toggleFab}>
+          <img src="/public/images/menu-logo.jpeg" alt="Menu" />
         </div>
       </div>
     </>

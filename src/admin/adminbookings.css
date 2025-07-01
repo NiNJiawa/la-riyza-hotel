@@ -1,0 +1,129 @@
+/* ===== Layout Dasar ===== */
+.admin-page {
+  display: flex;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== Konten Utama ===== */
+.admin-main {
+  flex: 1;
+  padding: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ===== Judul Halaman ===== */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+/* ===== Teks Jika Kosong ===== */
+.no-bookings {
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+/* ===== Container Tabel ===== */
+.table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Tabel Booking ===== */
+.bookings-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Header */
+.bookings-table thead {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.bookings-table th {
+  padding: 16px 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Body */
+.bookings-table td {
+  padding: 16px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  vertical-align: top;
+}
+
+/* Hover */
+.bookings-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* ===== Kontak Customer ===== */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #475569;
+}
+
+/* ===== Bukti Pembayaran ===== */
+.payment-proof {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease;
+}
+
+.payment-proof:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Not Uploaded ===== */
+.not-uploaded {
+  font-style: italic;
+  color: #9ca3af;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .admin-main {
+    padding: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .bookings-table {
+    font-size: 13px;
+    min-width: 700px;
+  }
+
+  .bookings-table th,
+  .bookings-table td {
+    padding: 12px;
+  }
+
+  .payment-proof {
+    width: 50px;
+    height: 50px;
+  }
+}

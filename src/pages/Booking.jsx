@@ -84,7 +84,7 @@ export default function Booking() {
         ...form,
       });
 
-      console.log("Booking success:", response.data); // cek debug
+      console.log("Booking success:", response.data);
       setResult(response.data);
       setPopupVisible(true);
     } catch (err) {
@@ -102,12 +102,19 @@ export default function Booking() {
     }
   };
 
+  function toggleFab() {
+    const el = document.getElementById("fabOptions");
+    el.classList.toggle("active");
+  }
+
   return (
     <>
       <div className="hero-booking-full">
         <div className="hero-content">
-          <h1>Booking</h1>
-          <p>LA RIZYA HOTEL</p>
+          <section className="booking-title">
+            <h2>Booking</h2>
+            <p>LA RIZYA HOTEL</p>
+          </section>
         </div>
       </div>
 
@@ -238,8 +245,27 @@ export default function Booking() {
           <div className="booking-popup-content">
             <h2>Booking Successful!</h2>
             <p>
-              <strong>Booking Code:</strong> {result.booking_code}
+              <p
+                style={{
+                  color: "crimson",
+                  fontWeight: "bold",
+                  marginTop: "-8px",
+                }}
+              >
+                ⚠️ Please remember your booking code!
+              </p>
+              <strong>Booking Code:</strong> {result.booking_code}{" "}
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(result.booking_code);
+                  alert("Booking code copied to clipboard!");
+                }}
+                className="copy-btn"
+              >
+                Copy
+              </button>
             </p>
+
             <p>
               <strong>Total:</strong> Rp{" "}
               {Number(result.total_price || 0).toLocaleString()}
@@ -286,6 +312,39 @@ export default function Booking() {
           </div>
         </div>
       )}
+
+      <div className="fab-container">
+        <div className="fab-options" id="fabOptions">
+          <a
+            href="https://www.traveloka.com/id-id/hotel/indonesia/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/traveloka.jpeg" alt="Traveloka" />
+          </a>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/wa.jpeg" alt="WhatsApp" />
+          </a>
+          <a
+            href="https://www.instagram.com/your_ig"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fab-icon"
+          >
+            <img src="/public/images/ig.jpeg" alt="Instagram" />
+          </a>
+        </div>
+
+        <div className="fab-button" onClick={toggleFab}>
+          <img src="/public/images/menu-logo.jpeg" alt="Menu" />
+        </div>
+      </div>
     </>
   );
 }

@@ -1,0 +1,209 @@
+.page {
+  display: flex;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+}
+
+.main {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.full-width {
+  grid-column: 1 / span 2;
+}
+
+.btn-primary {
+  grid-column: 1 / span 2;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #fff;
+  background: #1e3a8a;
+  cursor: pointer;
+}
+
+/* Form Check - Wifi */
+/* Fix spacing and alignment for all checkboxes */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Wrap for all facilities */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.6rem 1.5rem;
+  margin-top: 0.4rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff; /* biru sesuai tema */
+  margin: 0;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.card.unavailable {
+  background: #f1f5f9;
+  opacity: 0.7;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.badge.available {
+  background: #22c55e;
+}
+
+.badge.unavailable {
+  background: #ef4444;
+}
+
+.card-desc {
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.card-info,
+.facility-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.facility-list {
+  font-size: 13px;
+  color: #475569;
+}
+
+.room-img {
+  margin-top: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-sm.warning {
+  background: #fbbf24;
+}
+
+.btn-sm.danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-sm.primary {
+  background: #3b82f6;
+  color: #fff;
+}
+/* Modal Styles */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form {
+  background: white;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-actions {
+  grid-column: 1 / span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.modal-actions button {
+  padding: 8px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
